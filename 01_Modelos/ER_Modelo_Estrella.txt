@@ -1,0 +1,15 @@
+Modelo simplificado (texto):
+- Tabla origen (Jardineria):
+  - Clientes(CodigoCliente, NombreCliente, Pais, Ciudad)
+  - Productos(CodigoProducto, Nombre, Gama, PrecioVenta)
+  - Empleados(CodigoEmpleado, NombreEmpleado, Oficina)
+  - Pedidos(CodigoPedido, CodigoCliente, CodigoEmpleado, FechaPedido)
+  - DetallePedidos(id, CodigoPedido, CodigoProducto, Cantidad, PrecioUnidad)
+
+- Modelo Estrella (DataMart):
+  - FactVentas(sk_fact, sk_cliente, sk_producto, sk_empleado, sk_oficina, sk_tiempo, total_venta)
+  - DimCliente(sk_cliente, id_cliente, nombre_cliente, pais, ciudad)
+  - DimProducto(sk_producto, id_producto, nombre, gama, precio_venta)
+  - DimEmpleado(sk_empleado, id_empleado, nombre_empleado, oficina)
+  - DimOficina(sk_oficina, id_oficina, ciudad, pais, region)
+  - DimTiempo(sk_tiempo, fecha, anio, mes, trimestre)
